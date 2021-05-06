@@ -45,25 +45,24 @@ package leetcode.editor.cn
 
 object P1TwoSum {
     def main(args: Array[String]): Unit = {
-
     }
-}
 
-//leetcode submit region begin(Prohibit modification and deletion)
-object Solution {
-    def twoSum(nums: Array[Int], target: Int): Array[Int] = {
-        import scala.collection.mutable
-        val testMap = mutable.Map[Int, Int]()
-        for ((elem, i) <- nums.zipWithIndex) {
-            val tmp = target - elem
-            if (testMap.keySet.contains(tmp)) {
-                return Array(testMap.getOrElse(tmp, 0), i)
-            } else {
-                testMap.put(elem, i)
+    //leetcode submit region begin(Prohibit modification and deletion)
+    object Solution {
+        def twoSum(nums: Array[Int], target: Int): Array[Int] = {
+            import scala.collection.mutable
+            val testMap = mutable.Map[Int, Int]()
+            for ((elem, i) <- nums.zipWithIndex) {
+                val tmp = target - elem
+                if (testMap.keySet.contains(tmp)) {
+                    return Array(testMap.getOrElse(tmp, 0), i)
+                } else {
+                    testMap.put(elem, i)
+                }
             }
+            Array(0, 0)
         }
-        Array(0, 0)
     }
-}
 
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
+}
