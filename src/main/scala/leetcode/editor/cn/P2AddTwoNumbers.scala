@@ -62,7 +62,29 @@ object P2AddTwoNumbers {
      */
     object Solution {
         def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
-            new ListNode(1, null)
+            val head = new ListNode(-1)
+            var flag = 0
+            var p    = head
+            var p1   = l1
+            var p2   = l2
+            while (p1 != null || p2 != null) {
+                var tmp = flag
+                if (p1 != null) {
+                    tmp += p1.x
+                    p1 = p1.next
+                }
+                if (p2 != null) {
+                    tmp += p2.x
+                    p2 = p2.next
+                }
+                p.next = new ListNode(tmp % 10)
+                p = p.next
+                flag = tmp / 10
+            }
+            if (flag != 0) {
+                p.next = new ListNode(flag)
+            }
+            head.next
         }
     }
 
