@@ -7,9 +7,8 @@ package leetcode.editor.cn
  */
 object TestCode {
     def main(args: Array[String]): Unit = {
-        val array = Array(1, 2, 3, 4)
-        for ((k, v) <- array.zipWithIndex) {
-            println(k,v)
+        for(i <- 0 to 10){
+            println(i)
         }
 
     }
